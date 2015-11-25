@@ -1,0 +1,19 @@
+<div ng-include src="'app/partials/adminHeader.html'"></div>
+<div class="container-fluid" id="labelContainer">
+    <div class="text-left"> <img src="img/icon-mark.png" width="23" height="23" />&nbsp;&nbsp;正在分析中： </div>
+</div>
+<div class="progress" id="progressContainer">
+    <div class="progress-bar progress-bar-striped active" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
+        <span class="sr-only">{{progress}}%</span>
+    </div>
+</div>
+<div id="logContainer">
+    <textarea id="logTextarea">{{logs}}</textarea>
+</div>
+<div class="container-fluid" id="buttonContainer">
+    <div class="text-right"> <a href="#/report" class="btn btn-primary" ng-hide="enableNextPage"}}>下一步</a> </div>
+</div>
+<footer>
+    首都医科大学附属北京安贞医院版权所有
+    <br/> 京卫计网审[2014]第0113号 京ICP备11017250号-3
+</footer>

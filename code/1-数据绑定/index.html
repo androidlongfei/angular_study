@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        body{
+            border-radius: 2px;
+            vertical-align: middle;
+
+        }
+    </style>
+</head>
+<!--指令ng-app:管理哪一块元素，放在body中管理整个页面的元素-->
+<body ng-app>
+    <!-- {{}}里面的内容是angularjs的表达式-->
+    {{100}}
+    {{100+300}}
+    <!-- name是一个变量-->
+    {{name}}
+    <!-- "name"是一个字符串-->
+    {{"name"}}
+    <br/>
+
+    <!--
+    ng-model:主要是绑定数据，ng-model中的name对应的时value的值；
+    ng-model绑定的双向的view <==>  model
+    -->
+    <input type="text" ng-model="name" value=""/>
+    {{name}}
+    <input type="text" ng-model="name" value=""/>
+
+
+    <script src="../../vendor/angularjs/angular.js"></script>
+</body>
+</html>

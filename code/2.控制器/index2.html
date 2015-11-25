@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="../../vendor/angularjs/angular.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.9/angular.min.js"></script>
+    <!--
+    angularjs1.3.0以下
+    使用index2.js文件
+    -->
+</head>
+
+<body ng-app>
+        <div ng-controller="secondController">
+            <div>
+                <input type="text" ng-model="name" value="{{name}}"/>
+                <br/>
+                <input type="text" ng-model="age" value="{{age}}" />
+            </div>
+            姓名:{{name}}
+            <br/>
+            年龄:{{age}}
+            <div ng-bind="name"></div>
+            <div ng-bind="age"></div>
+        </div>
+        <script src="app/index2.js"></script>
+</body>
+</html>

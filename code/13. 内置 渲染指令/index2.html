@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="../../vendor/angularjs/angular.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.9/angular.min.js"></script>
+    <script src="app/index2.js"></script>
+
+    <!--
+    angularjs1.3.0以下
+    使用index2.js文件
+    -->
+</head>
+
+<body ng-app="myApp">
+
+<div ng-controller="firstController">
+    <div>
+        <ul>
+            <li ng-repeat="user in data | filterCity">
+                {{user.name}} ------ {{user.age}} ----- {{user.city}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-controller="secondController">
+    <div>
+        <ul>
+            <li ng-repeat="user in mydata">
+                {{user.name}} ------ {{user.age}} ----- {{user.city}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <ul ng-init = "cityArr = ['上海','北京','武汉']">
+        <li ng-repeat="city in cityArr">
+            <span>index:{{$index}}</span>
+            <span>first:{{$first}}</span>
+            <span>middle:{{$middle}}</span>
+            <span>last:{{$last}}</span>
+        </li>
+    </ul>
+</div>
+
+<div ng-include="'index.html'">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<div ng-include src="'app/partials/adminHeader.html'"></div>
+<div class="container-fluid" id="labelContainer">
+    <div class="text-left">
+        <img src="img/icon-mark.png" width="23" height="23"> &nbsp;请上传本次基因筛查病人信息表格：
+    </div>
+</div>
+<div id="xslxContainer">
+    <span id="contactMessage">请将后缀名为 XLSX / XLSM / XLSB / ODS / XLS / XML 的表格文件拖放到此处</span>
+    <table id="contactTable"></table>
+</div>
+<div class="container-fluid" id="buttonContainer">
+    <div class="text-right">
+        <a class="btn btn-primary" ng-click="nextPage()">下一步</a>
+    </div>
+</div>
+<footer>
+    首都医科大学附属北京安贞医院版权所有
+    <br/> 京卫计网审[2014]第0113号 京ICP备11017250号-3
+</footer>
+<script type="text/javascript" src="js/shim.js"></script>
+<script type="text/javascript" src="js/jszip.js"></script>
+<script type="text/javascript" src="js/xlsx.js"></script>
+<!-- uncomment the next line here and in xlsxworker.js for ODS support -->
+

@@ -1,0 +1,150 @@
+<div id="anzhen-home-page">
+
+    [four_col_col1]
+    <div class="home-introduce">
+
+        <img class="introduce-img alignnone size-full wp-image-1115" alt="first" src="http://localhost:8888/wp-content/images/center.jpg" width="257" height="155" />
+
+        <span class="introduce-word-title">中心简介</span>
+
+        [separator type='transparent' color='' thickness='' up='5' down='5']
+        <p style="text-align: left">阜外医院分子诊断中心暨心血管疾病分子诊断北京市重点实验室成立于2012年，依托国家心血管病中心、心血管疾病国家重点实验室与中国医学科学院阜外医院而建，集基础科研、检测服务、产品研发等多重职能为一体...</p><a href="#" style="position:absolute;right:0;bottom:0;color:blue;margin-left:10px;margin-right:5px">更多</a>
+    </div>
+    [/four_col_col1]
+
+    [four_col_col2]
+
+    <div class="home-introduce">
+        <img class="introduce-img alignnone size-full wp-image-1117" alt="second" src="http://localhost:8888/wp-content/images/test.jpg" width="255" height="155" />
+
+        <span class="introduce-word-title">临床检测</span>
+
+        [separator type='transparent' color='' thickness='' up='5' down='5']
+
+        充分利用安贞医院和心血管研究所的技术力量，密切保持与临床医生和基础研究室的联系，加强与临床的结合和研究室的结合，保证检测项目的质量要求，逐年增加新的临床检测项目，满足临床需要，提高临床的诊断水平。拥有包括...
+    </div>
+    [/four_col_col2]
+
+    [four_col_col3]
+    <div class="home-introduce">
+        <img class="introduce-img alignnone size-full wp-image-1118 " alt="third" src="http://localhost:8888/wp-content/images/cooperation.jpg" width="257" height="155" />
+
+        <span class="introduce-word-title">合作交流</span>
+
+        [separator type='transparent' color='' thickness='' up='5' down='5']
+
+        目前共有10名正式员工，其中正高职称4人，副高职称人员2人，中级职称2人，初级职称2人，均拥有海外留学经历或博士、硕士学位，有专业的测序及生物信息分析能力。其中3人拥有人力资源和社会保障部基因健康管理师职业培训证书...<a href="#" style="position:absolute;right:0;bottom:0">更多</a>
+    </div>
+    [/four_col_col3]
+
+    [four_col_col4]
+    <div class="home-introduce">
+        <img class="alignnone size-full wp-image-1116" alt="fourth" src="http://localhost:8888/wp-content/images/news.jpg" width="257" height="155" />
+
+        <span class="introduce-word-title">新闻中心</span>
+
+        [separator type='transparent' color='' thickness='' up='5' down='5']
+
+        长城五洲国际心血管病学会议（第二十六届长城国际心脏病会议、第九届北京五洲国际心血管病会议）将于10月29日-11月1日在北京·国家会议中心隆重举行，大会组委会诚挚邀请您拨冗莅临金秋的北京！本届大会由中国国际科技会议中心...
+    </div>
+    [/four_col_col4]
+
+    [separator type='transparent' color='' thickness='' up='25' down='25']
+</div>
+
+<style>
+    #anzhen-home-page div.home-introduce{border: 1px solid #c1e2b3;position: relative;}
+    div.home-introduce span.introduce-word-title{position:absolute;font-size:30px;color:white;font-weight:9;display:none}
+    div.home-introduce img.img_opacity{filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;}
+</style>
+<script>
+    jQuery(document).ready(function(){
+        //中心
+
+        var introduces = jQuery('#anzhen-home-page div.home-introduce');
+        alert(introduces.length);
+        for(var i=0; i<introduces.length; i++) {
+            var introduce = introduces.eq(i);
+            introduce.bind({
+                'mouseout' : function (ev) {
+                    var introduce_img = $(this).children('img.introduce-img');
+                    var introduce_word = $(this).children('span.introduce-word-title');
+                    introduce_img.removeClass('img_opacity');
+                    introduce_word.hide();
+                },
+                'mouseover' : function (ev) {
+                    var introduce_img = $(this).children('img.introduce-img');
+                    var introduce_word = $(this).children('span.introduce-word-title');
+                    var left_size = (introduce_img.width()-introduce_word.width())/2+'px';
+                    var top_size = (introduce_img.height()-introduce_word.height())/2+'px'
+                    introduce_word.css('left',left_size).css('top',top_size);
+                    introduce_img.addClass('img_opacity');
+                    introduce_word.show();
+                }
+            });
+        }
+
+        jQuery('#center_introduction').bind({
+            'mouseout' : function (ev) {
+                var introduce_img = jQuery('img.introduce-img');
+                var introduce_word = jQuery('span.introduce-word-title');
+                introduce_img.removeClass('img_opacity');
+                introduce_word.hide();
+            },
+            'mouseover' : function (ev) {
+                var introduce_img = jQuery('img.introduce-img');
+                var introduce_word = jQuery('span.introduce-word-title');
+                var left_size = (center_img.width()-center_word.width())/2+'px';
+                var top_size = (center_img.height()-center_word.height())/2+'px'
+                introduce_word.css('left',left_size).css('top',top_size);
+                introduce_img.addClass('img_opacity');
+                introduce_word.show();
+            }
+        });
+        //临床检测
+        jQuery('#clinical_test').bind({
+            'mouseout' : function () {
+                var img = jQuery('#clinical_test .mouse_env_bg');
+                //img.stop();
+                img.hide();
+                //img.slideUp(550);
+            },
+            'mouseover' : function () {
+                var img = jQuery('#clinical_test .mouse_env_bg');
+                //img.stop();
+                img.show();
+                //img.slideDown(550);
+            }
+        });
+        //合作交流
+        jQuery('#communication').bind({
+            'mouseout' : function () {
+                var img = jQuery('#communication .mouse_env_bg');
+                //img.stop();
+                img.hide();
+                //img.slideUp(550);
+            },
+            'mouseover' : function () {
+                var img = jQuery('#communication .mouse_env_bg');
+                //img.stop();
+                img.show();
+                //img.slideDown(550);
+            }
+        });
+        //新闻中心
+        jQuery('#news').bind({
+            'mouseout' : function () {
+                var img = jQuery('#news .mouse_env_bg');
+                //img.stop();
+                img.hide();
+                //img.slideUp(550);
+            },
+            'mouseover' : function () {
+                var img = jQuery('#news .mouse_env_bg');
+                //img.stop();
+                img.show();
+                //img.slideDown(550);
+            }
+        });
+    })
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vendor/bootstrap/js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+
+<style>
+
+    .meun-content ul,.meun-content li,.meun-content h5,.meun-content div{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .meun-content{
+        background-color: white;
+        border: 1px solid #ddd;
+        width: 200px;
+        margin: 0 auto;
+    }
+    .meun-content div.head{
+        background-image: url("menu_picture.png");
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 22px;
+        text-align: center;
+
+    }
+
+    .meun-content div.head h5{
+        color: white;
+        font-size: 30px;
+        font-family: Helvetica;
+    }
+
+    .meun-content ul{
+        list-style: none;
+    }
+
+    .meun-content ul li{
+        text-align: left;
+    }
+
+    .meun-content li a{
+        text-decoration:none;
+        color: black;
+    }
+
+    .meun-content li a.active{
+        color: blue;
+    }
+
+    .meun-content li a:hover{
+        color: blue;
+    }
+
+    .meun-content li.one-level-title{
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        font-size: 22px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .meun-content li ul{
+        padding-bottom: 3px;
+        padding-top: 3px;
+    }
+
+    .meun-content li.no-bottom-border{
+        border-bottom: 0px solid #ddd;
+    }
+
+    .meun-content li.two-level-title{
+        font-size: 14px;
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    .all{
+        width: 1000px;
+        background-color: #269abc;
+    }
+
+
+
+
+</style>
+
+<div>
+
+    <h4>主动脉及疾病基因检测</h4>
+    <div class = "meun-content">
+        <div class="head"><h5>临床检测</h5></div>
+        <ul>
+            <li class="one-level-title"><a href="#">心血管致病基因检测</a></li>
+            <li>
+                <ul>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1522">主动脉及疾病基因检测</a></li>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1524">心肌病基因检测</a></li>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1526">心率失常基因检测</a></li>
+                </ul>
+
+            </li>
+            <li class="one-level-title"><a href="#">药物基因组检测</a></li>
+            <li>
+                <ul>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1566">氯吡格雷用药基因检测</a></li>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1572">华法林用药基因检测</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<script>
+
+    jQuery(document).ready(function() {
+        var currentTitle = jQuery("h4");
+        var as =jQuery(".meun-content li a");
+        for(var i=0;i<as.length;i++){
+            var item = as.eq(i);
+            if(item.text() === currentTitle.text()){
+                clearActiveColor();
+                item.addClass("active");
+            }
+        }
+
+        function clearActiveColor(){
+            for(var i=0;i<as.length;i++){
+                var item = as.eq(i);
+                item.removeClass("active");
+            }
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
+

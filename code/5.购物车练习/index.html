@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- version 1.4.7-->
+    <script src="../../vendor/angularjs/angular.js"></script>
+    <!--
+    angularjs1.3.0以下
+    使用index2.js文件
+    -->
+</head>
+
+<body ng-app="myApp">
+        <div ng-controller="secondController">
+            <div>
+                <input type="text" ng-model="name" value="{{name}}"/>
+                <br/>
+                <input type="text" ng-model="age" value="{{age}}" />
+            </div>
+            姓名:{{name}}
+            <br/>
+            年龄:{{age}}
+        </div>
+
+        <div ng-controller="threeController">
+            <div>
+                <input type="button" value="{{myName}}" ng-model="myName" />
+            </div>
+            <br/>
+            {{myName}}
+        </div>
+        <script src="app/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vendor/bootstrap/js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+
+<style>
+
+    .clearFix:after{
+        clear:both;
+        display:block;
+        visibility:hidden;
+        height:0;
+        line-height:0;
+        content:"";
+    }
+    .clearFix{
+        zoom:1
+    }
+
+    #technology-platform-content .item img{
+        float:right;
+        margin-right: 10px;
+    }
+
+    #technology-platform-content div.item{
+        border: 1px solid #000000;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+
+
+</style>
+
+<div id="technology-platform-content">
+
+    <div class="item">
+        <img src="http://i6.topit.me/6/5d/45/1131907198420455d6o.jpg" width="100px" height="100px" alt="环绕"/>
+        据新华视点 微博消息，五中全会提出要提高教育质量，推动义务教育均衡发展，普及高中阶段教育，逐步分类推进中等职业教育免除学杂费，率先从建档立卡的家庭经济困难学生实施普通高中免除学杂费，实现家庭经济困难学生资助全覆盖。
+        <div class="clearFix"></div>
+    </div>
+
+    <div class="item">
+        <img src="http://i6.topit.me/6/5d/45/1131907198420455d6o.jpg" width="100px" height="100px" alt="环绕"/>
+        据新华视点 微博消息，五中全会提出要提高教育质量，推动义务教育均衡发展，普及高中阶段教育，逐步分类推进中等职业教育免除学杂费，率先从建档立卡的家庭经济困难学生实施普通高中免除学杂费，实现家庭经济困难学生资助全覆盖。
+        <p>
+            1924年，丁玲来到了北平。在一个社交场合结识了青年编辑胡也频。此时的丁玲正在为亲弟弟的夭折和命途艰辛而痛苦，对比她还小一岁的胡也频毫不动心。她感到自己无法在北平继续生活下去，于是选择了离开，返回到湖南老家。不料穷编辑胡也频居然借了钱追到湖南，他蓬头垢面出现在丁玲母女面前，犹如一个爱情的乞丐，丁玲紧闭的爱情大门终于被打开。他们在山上住着，有时候要到城里去买东西，胡也频一个人下山，丁玲不放心，就追下山跟着胡也频一块去。
+        </p>
+        <p>
+            一次他们回来的时候，经过一个淤泥地，走进淤泥地就出不来了。于是他们就站在淤泥地上看天上的星星，说说悄悄话，直到过了好长一段时间，一个过路人才把他们给拉了出来。他们住在亭子间里几乎没有什么经济来源，生活简单而又纯真，就像小孩子们过家家，虽然贫寒却过得十分温馨。
+        </p>
+    </div>
+
+    <div class="item">
+        <img src="http://i6.topit.me/6/5d/45/1131907198420455d6o.jpg" width="100px" height="100px" alt="环绕"/>
+        <div>
+            <h5>特点</h5>
+            据新华视点 微博消息，五中全会提出要提高教育质量，推动义务教育均衡发展，普及高中阶段教育，逐步分类推进中等职业教育免除学杂费，率先从建档立卡的家庭经济困难学生实施普通高中免除学杂费，实现家庭经济困难学生资助全覆盖。
+            <p>
+                1924年，丁玲来到了北平。在一个社交场合结识了青年编辑胡也频。此时的丁玲正在为亲弟弟的夭折和命途艰辛而痛苦，对比她还小一岁的胡也频毫不动心。她感到自己无法在北平继续生活下去，于是选择了离开，返回到湖南老家。不料穷编辑胡也频居然借了钱追到湖南，他蓬头垢面出现在丁玲母女面前，犹如一个爱情的乞丐，丁玲紧闭的爱情大门终于被打开。他们在山上住着，有时候要到城里去买东西，胡也频一个人下山，丁玲不放心，就追下山跟着胡也频一块去。
+            </p>
+            <p>
+                一次他们回来的时候，经过一个淤泥地，走进淤泥地就出不来了。于是他们就站在淤泥地上看天上的星星，说说悄悄话，直到过了好长一段时间，一个过路人才把他们给拉了出来。他们住在亭子间里几乎没有什么经济来源，生活简单而又纯真，就像小孩子们过家家，虽然贫寒却过得十分温馨。
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    $(document).ready(function() {
+        var currentTitle = $("h4");
+        var as = $(".meun-content li a");
+        for(var i=0;i<as.length;i++){
+            var item = as.eq(i);
+            if(item.text() === currentTitle.text()){
+                clearActiveColor();
+                item.addClass("active");
+            }
+        }
+
+        function clearActiveColor(){
+            for(var i=0;i<as.length;i++){
+                var item = as.eq(i);
+                item.removeClass("active");
+            }
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
+
+Illuminat HiSeq® 2500 Sequencing System

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="../../vendor/angularjs/angular.js"></script>-->
+    <script src="../../vendor/bootstrap/js/jquery-1.11.1.js"></script>
+    <script src="../../vendor/angularjs/jspdf.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.9/angular.min.js"></script>
+    <script src="app/index2.js"></script>
+
+    <style>
+
+        #center, #test {
+            border: 1px solid #c1e2b3;
+            width: 257px;
+            position: relative;
+            float: left;
+            margin: 10px;
+        }
+
+        img.mouse_env_bg {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .toCenter {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+
+<div ng-controller="firstController">
+
+
+</div>
+
+<div id="main">
+    <div id="center">
+        <img src="center.jpg" width="257px" height="155px" class="orgin_img">
+        <img src="center_introduction.jpg" width="257px" height="155px" class="mouse_env_bg">
+        <p>阜外医院分子诊断中心暨心血管疾病分子诊断北京市重点实验室成立于2012年，依托国家心血管病中心、
+            心血管疾病国家重点实验室与中国医学科学院阜外医院而建，集基础科研、检测服务、产品研发等多重职能为一体...
+        </p>
+    </div>
+
+    <div id="test">
+        <img src="test.jpg" width="257px" height="155px" class="orgin_img">
+        <img src="clinical_testing.jpg" width="257px" height="155px" class="mouse_env_bg">
+        <p>充分利用安贞医院和心血管研究所的技术力量，密切保持与临床医生和基础研究室的联系，加强与临床的结合和研究室的结合，
+            保证检测项目的质量要求，逐年增加新的临床检测项目，诊断水平。拥有包括...
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<script>
+    jQuery(document).ready(function () {
+
+
+        var center = jQuery('#center');
+        var countOut = 0;
+        var countOver = 0;
+
+        var imgs = jQuery('#main img.orgin_img');
+        alert(imgs.length);
+        for(var i=0; i<imgs.length; i++){
+            var img = imgs.eq(i);
+            img.bind({
+                'mouseout' : function (ev) {
+                    alert('img移出');
+                    var img_ev = jQuery(this).next('img.mouse_env_bg');
+                    if(img_ev.is(":animated")){
+                        //img.stop(true);
+                        //console.log('hide');
+                        //img.hide('fast');
+                        jQuery(this).slideUp(500);
+                    }
+                    ev.stopPropagation();
+                },
+                'mouseover' : function (ev) {
+                    //alert('img移入');
+                    var img_ev = jQuery(this).next('img.mouse_env_bg');
+                    if(!img_ev.is(":animated")){
+                        //img.stop(true);
+                        //console.log('show');
+                        //img.show('fast');
+                        img_ev.slideDown(500);
+
+                    }
+                    ev.stopPropagation();
+                }
+            });
+        }
+
+
+
+
+        jQuery('#center').bind({ //传递一个对象
+            'mouseout': function () {
+                var img = jQuery('#center img.mouse_env_bg');
+
+                if(!img.is(":animated")){
+                    //img.stop(true);
+                    //console.log('hide');
+                    img.hide();
+                    //img.slideUp(500);
+                }
+
+            },
+            'mouseover': function () {
+                var img = jQuery('#center img.mouse_env_bg');
+
+                if(!img.is(":animated")){
+                    //img.stop(true);
+                    //console.log('show');
+                    img.show();
+                    //img.slideDown(500);
+
+                }
+
+            }
+        });
+
+
+
+        jQuery('#test').bind({ //传递一个对象
+            'mouseout': function () {
+                var img = jQuery('#test img.mouse_env_bg');
+                if(!img.is(":animated")){
+                    //img.stop(true);
+                    //console.log('hide');
+                    //img.hide('fast');
+                    img.slideUp(500);
+                }
+            },
+            'mouseover': function () {
+                var img = jQuery('#test img.mouse_env_bg');
+                if(!img.is(":animated")){
+                    //img.stop(true);
+                    //img.show('fast');
+                    //console.log('show');
+                    img.slideDown(500);
+                }
+
+            }
+
+
+        });
+
+    })
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="../../vendor/angularjs/angular.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.9/angular.min.js"></script>
+    <script src="app/index2.js"></script>
+
+    <!--
+    angularjs1.3.0以下
+    使用index2.js文件
+    -->
+
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+
+<div ng-controller="firstController">
+    <div>
+        <ul>
+            <li ng-repeat="user in data">
+                {{user.name}} ------ {{user.age}} ----- {{user.city}}
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <button ng-click="changeStatue($event)">改变状态</button>
+        <p>{{statues}}</p>
+    </div>
+
+    <div ng-class='{red:statues}'>
+        ng-class...
+        .....
+
+    </div>
+
+    <div>
+        <ul ng-switch on="count">
+            <li ng-switch-when="1">true...</li>
+            <li ng-switch-when="2">false...</li>
+        </ul>
+        ng-style...
+    </div>
+
+    <div ng-if="statues">
+        ng-if...
+    </div>
+
+    <div ng-style="deffaultStyle">
+        ng-style...
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<!--
+ 节点指令包括:
+ ng-class
+ ng-style
+ ng-show
+ ng-hidden
+ ng-switch
+ ng-class-even ===> { 奇数}
+ ng-class-old  ===> {偶数}
+ ng-if
+ .
+ .
+ .
+
+
+-->

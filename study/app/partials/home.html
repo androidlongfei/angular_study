@@ -1,0 +1,47 @@
+<div ng-include src="'app/partials/adminHeader.html'"></div>
+<div class="container-fluid" id="labelContainer">
+    <div class="text-left">
+        &nbsp;
+    </div>
+</div>
+<div class="container-fluid body-content">
+    <div class="panel panel-default">
+        <div class="panel-heading text-left"><span class="glyphicon glyphicon-th-list"></span>&nbsp;开始新的分析</div>
+        <div class="panel-body text-left">
+            <button class="btn btn-info btn-app" ng-click="nextPage('cardio')">&nbsp;&nbsp;&nbsp;&nbsp;开&nbsp;&nbsp;始&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading text-left"><span class="glyphicon glyphicon-th-list"></span>&nbsp;以往分析历史</div>
+        <div class="panel-body">
+            <br>
+            <table class="table table-bordered text-left">
+                <thead>
+                    <tr>
+                        <th>任务编号</th>
+                        <th>应用类型</th>
+                        <th>样本文件</th>
+                        <th>开始时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="task in tasks">
+                        <th scope="row" width="200">{{task._id}}</th>
+                        <td width="120">{{apps[task.name].title}}</td>
+                        <td width="320">测序文件：{{task.sequenceFile}}&nbsp;&nbsp;&nbsp;目标区域文件：{{task.targetRegionFile}}</td>
+                        <td width="80">{{task.creationDate}}</td>
+                        <td width="80">{{task.progress == 100? '已经完成':'运行中...'}}</td>
+                        <td width="80"><a href="#/{{task.progress == 100? 'report':'analyze'}}/{{task.uid}}" >{{task.progress == 100? '查看报告':'查看日志'}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<footer>
+    Copyright © 2015 Micro Helix. All Rights Reserved
+    <br/> 京ICP备14035510号-2
+</footer>

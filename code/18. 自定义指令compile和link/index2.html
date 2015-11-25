@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="../../vendor/angularjs/angular.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.9/angular.min.js"></script>
+    <script src="app/index2.js"></script>
+
+    <!--
+    angularjs1.3.0以下
+    使用index2.js文件
+    -->
+
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+
+<div ng-controller="firstController">
+
+    <!--  自定义指令展示第一种: 标签-->
+
+    <div ng-repeat="user in myData" my-tag>
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<!--
+ 自定义节点属性:
+ templateUrl:模板url
+ transclude:是否包含原来的标签数据
+ priority: 指令优先级
+ terminal:是否指令到此结束
+ 
+
+
+
+-->

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../vendor/bootstrap/js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+
+<style>
+
+    .meun-content ul,.meun-content li,.meun-content h5,.meun-content div{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .meun-content{
+        background-color: white;
+        border: 1px solid #000000;
+        width: 200px;
+        margin: 0 auto;
+    }
+    .meun-content div.head{
+        background-color:darkcyan;
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .meun-content ul{
+        list-style: none;
+    }
+
+    .meun-content ul li{
+        text-align: center;
+    }
+
+    .meun-content li a{
+        text-decoration:none;
+        color: black;
+    }
+
+    .meun-content li a.active{
+        color: blue;
+    }
+
+    .meun-content li a:hover{
+        color: blue;
+    }
+
+    .meun-content li.one-level-title{
+        border-bottom: 1px solid #000000;
+        border-top: 1px solid #000000;
+        font-size: 22px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-size: 18px;
+    }
+
+    .meun-content li.no-bottom-border{
+        border-bottom: 0px solid #000000;
+    }
+
+    .meun-content li.two-level-title{
+        font-size: 14px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    .all{
+        width: 1000px;
+        background-color: #269abc;
+    }
+
+
+
+</style>
+
+<div>
+
+    <h4>主动脉及疾病基因检测</h4>
+    <div class = "meun-content">
+        <div class="head"><h5>新闻中心</h5></div>
+        <ul>
+            <li class="one-level-title"><a href="#">医院动态</a></li>
+            <li>
+                <ul>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1683">吴英恺精准医学研究系列学术讲座第八期</a></li>
+                    <li class="two-level-title"><a href="http://localhost:8888/wp/?page_id=1679">吴英恺精准医学研究系列学术讲座第九期</a></li>
+                </ul>
+
+            </li>
+            <li class="one-level-title no-bottom-border"><a href="http://localhost:8888/wp/?page_id=1661">媒体聚焦</a></li>
+            <li class="one-level-title no-bottom-border"><a href="http://localhost:8888/wp/?page_id=1663">通知公告</a></li>
+        </ul>
+
+    </div>
+
+</div>
+
+<script>
+
+    jQuery(document).ready(function() {
+        var currentTitle = jQuery("h4");
+        var as =jQuery(".meun-content li a");
+        for(var i=0;i<as.length;i++){
+            var item = as.eq(i);
+            if(item.text() === currentTitle.text()){
+                clearActiveColor();
+                item.addClass("active");
+            }
+        }
+
+        function clearActiveColor(){
+            for(var i=0;i<as.length;i++){
+                var item = as.eq(i);
+                item.removeClass("active");
+            }
+        }
+    })
+
+
+</script>
+
+</body>
+</html>

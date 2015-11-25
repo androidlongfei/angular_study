@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<script src="../../vendor/angularjs/angular.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.9/angular.min.js"></script>
+    <script src="../../vendor/bootstrap/js/jquery-1.11.1.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="app/shopcar.js"></script>
+
+    <style>
+
+        body{
+            padding: 20px;
+        }
+
+        th,td{
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td span{
+            height:100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app>
+        <div class="container" ng-controller="carController">
+            <table class="table table-bordered" ng-show="carItem.length>0">
+                <thread>
+                    <tr>
+                        <th>产品编号</th>
+                        <th>产品名字</th>
+                        <th>购买数量</th>
+                        <th>产品单价</th>
+                        <th>产品总价</th>
+                        <th>操作</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr ng-repeat="item in carItem">
+                        <td><span>{{item.id}}</span></td>
+                        <td><span>{{item.name}}</span></td>
+                        <td>
+                            <button class="btn btn-success" ng-click="reduce(item.id)" type="button">-</button>
+                            <input type="text" value="{{item.number}}" ng-model="item.number"/>
+                            <button class="btn btn-success" ng-click="add(item.id)" type="button">+</button>
+                        </td>
+                        <td><span>{{item.price}}</span></td>
+                        <td><span>{{item.price * item.number}}</span></td>
+                        <td><button class="btn btn-danger" ng-click="remove(item.id)" type="button">删除</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">总价:{{totalPrice()}}</td>
+                        <td colspan="2">购买数量:{{totalNumber()}}</td>
+                        <td colspan="2"><button class="btn btn-danger" ng-click="clearAll()" type="button">清空购物车</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <p ng-show="!carItem.length"> 您的购物车为空</p>
+        </div>
+    </div>
+
+</body>
+</html>

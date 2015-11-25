@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="MyApp">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/temp.css">
+    <script src="js/angular-1.3.0.js"></script>
+    <script src="js/directive_controller.js"></script>
+</head>
+
+<body>
+<div ng-controller='MyTempCtrol'>
+    <load howload="loadMyData()"></load>
+</div>
+
+<div ng-controller='MyTempCtrol2'>
+    <load howload="loadMyData2()">滑动加载数据2</load>
+</div>
+
+<div ng-controller='MyTempCtrol3'>
+    <load howload="loadMyData3()">滑动加载数据3</load>
+</div>
+</body>
+
+
+</html>
