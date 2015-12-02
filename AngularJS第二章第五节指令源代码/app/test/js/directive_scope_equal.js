@@ -1,18 +1,18 @@
 var myAppModel = angular.module('MyApp', []);
 myAppModel.controller('MyTempCtrol', ['$scope',
     function ($scope) {
-        $scope.food = '米饭';
+        $scope.myName = '米饭';
     }
 ]);
 
-myAppModel.directive('atbind', function () {
+myAppModel.directive('equalBind', function () {
     return {
-        //scope:{@}，把当前属性作为字符串传递
+        //scope:{=}，双向数据绑定(特点:与父scope中的属性进行双向绑定)
         scope:{
-            myfood:'@'
+            tname:'='
         },
         restrict:'AEMC',
-        template:'<div>{{myfood}}</div>'
+        template:'<input type="text" ng-model="tname"/>'
         //link:function(scope,element,attrs){
         //    scope.myfood = attrs.myfood;
         //}
