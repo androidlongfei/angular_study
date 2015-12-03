@@ -1,0 +1,17 @@
+
+.all{
+    padding: 20px;
+    margin: 40px;
+}
+
+.title{
+    background-color: #b6caa7;
+    color: #c12e2a;
+    font-size: 25px;
+}
+
+.body{
+    background-color: #21292B;
+    color: white;
+    font-size: 22px;
+}
