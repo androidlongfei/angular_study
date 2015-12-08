@@ -36,7 +36,7 @@ myAppModel.directive('superman', function () {
 myAppModel.directive('mystrength',function(){
     return {
         //require：获取到superman指令的对象，并注入到link(就是第四个参数)中，
-        require:'^superman',
+        require:'?superman',
         link:function(scope,element,attrs,supermanCtrl){
             supermanCtrl.addMyStrength();
         }
