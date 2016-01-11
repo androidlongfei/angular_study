@@ -23,6 +23,6 @@ myAppModel.directive('andBind', function () {
             mysayme:'&'
         },
         restrict:'AEMC',
-        template:'<input type="text" ng-model="username"/> <br>'+'<button class="btn btn-default" ng-click="mysayme({name:username})" ng-dblclick="mysay({name:username})">click</button></br>'
+        template:'<input type="text" ng-model="username"/> <br>'+'<button class="btn btn-default" ng-click="mysayme(123)" ng-dblclick="mysay({name:username})">click</button></br>'
     }
 })
